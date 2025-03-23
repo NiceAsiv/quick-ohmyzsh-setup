@@ -24,15 +24,15 @@ if ! command -v curl &>/dev/null; then
 fi
 
 #Detect connection to GitHub 
-CONNECT_STATUS= TRUE
+CONNECT_STATUS="true"
 if curl -s --connect-timeout 5 https://github.com > /dev/null; then
-    CONNECT_STATUS = TRUE
+    CONNECT_STATUS="true"
 else
-    CONNECT_STATUS = FALSE
+    CONNECT_STATUS="false"
 fi
 
 # Choose installation source
-if [ "$CONNECT_STATUS" = FALSE ]; then
+if [ "$CONNECT_STATUS" = "false" ]; then
     echo "Using Gitee mirror to install Oh My Zsh..."
     export REMOTE=gitee.com/mirrors/oh-my
     sh -c "$(wget -O- gitee.com/pocmon/mirror)"

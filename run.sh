@@ -55,6 +55,7 @@ if [ "$CONNECT_STATUS" = FALSE ]; then
     git clone https://gitee.com/mirror-luyi/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 else
     git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+fi
 
 # Set default shell
 chsh -s $(which zsh)
